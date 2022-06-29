@@ -6,8 +6,8 @@ import GlobalStyle from "../assets/styles/globalStyles";
 
 import Login from "./Login";
 import Cadastro from "./Cadastro";
-//import Entradas from "./Entradas";
-//import Saidas from "./Saidas";
+import Entradas from "./Entradas";
+import Saidas from "./Saidas";
 import Transacoes from "./Transacoes";
 
 export default function App() {
@@ -19,10 +19,10 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/Cadastro" element={<Cadastro />} />
-            <Route path="/Transacoes" element={<Transacoes />} />
-            {/* <Route path="/income" element={<Income />} />  
-            <Route path="/expense" element={<Expense />} />   */}
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/transacoes" element={<Transacoes />} />
+           <Route path="/entradas" element={<Entradas />} />  
+            <Route path="/saidas" element={<Saidas />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>

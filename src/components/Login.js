@@ -13,7 +13,7 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  async function Login(event) {
+  async function AdicionarLogin(event) {
     event.preventDefault();
 
     const body = {
@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <Container>
       <h1>My Wallet</h1>
-      <LoginForms onSubmit={Login}>{FormularioLogin()}</LoginForms>
+      <LoginForms onSubmit={AdicionarLogin}>{FormularioLogin()}</LoginForms>
       <Link to="/cadastro">Primeira vez? Cadastre-se!</Link>
     </Container>
   );
