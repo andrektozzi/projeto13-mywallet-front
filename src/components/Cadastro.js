@@ -1,46 +1,41 @@
 import React from "react";
-import { useState, useContext} from "react";
-import UserContext from "../context/UserContext";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
 export default function Cadastro() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-    const navigate = useNavigate();
-    const { setUser } = useContext(UserContext);
 
-    async function Cadastro(event) {
-        event.preventDefault();
+  const navigate = useNavigate();
 
-        const body = {
-            name,
-            email,
-            password,
-            confirmPassword
-        }
+  async function Cadastro(event) {
+    event.preventDefault();
 
-        try {
-            const resposta = await axios.post("http://localhost:5000/cadastro", body);
-            const { name, email, password } = resposta;
+    const body = {
+      name,
+      email,
+      password,
+      confirmPassword,
+    };
 
-            setUser({
-                name,
-                email,
-                password
-            });
-
-            navigate("/transacoes")
-
-        } catch (error) {
-            const erro = error.resposta.statusText
-            alert(erro)
-        }
+    if(password !== confirmPassword) {
+      return alert("As senhas não conferem. Digite novamente!");
     }
+
+    try {
+      await axios.post("http://localhost:5000/cadastro", body);
+      alert("Sucesso! Seu usuário foi criado.");
+      navigate("/");
+    } catch (error) {
+      const mensagem = error.response.statusText;
+      alert(mensagem);
+    }
+  }
 
     function FormularioCadastro() {
         return (

@@ -6,36 +6,38 @@ import styled from "styled-components";
 import axios from "axios";
 
 export default function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const navigate = useNavigate();
-    const { setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
-   async function Login(event) {
+  const navigate = useNavigate();
+
+  async function Login(event) {
     event.preventDefault();
 
     const body = {
-        email,
-        password
-    }
+      email,
+      password,
+    };
 
     try {
-        const resposta = await axios.post("http://localhost:5000/login", body);
-        const { name, email, token } = resposta;
+      const response = await axios.post("http://localhost:5000/login", body);
+      const { name, email, token } = response.data;
 
-        setUser({
-            name,
-            email,
-            token
-        });
-        navigate("/transacoes");
+      setUser({
+        name,
+        email,
+        token,
+      });
 
+      navigate("/transacoes");
     } catch (error) {
-        const erro = error.resposta.statusText;
-        alert(erro);
+      const message = error.response.statusText;
+
+      alert(message);
     }
-   }
+  }
 
    function FormularioLogin() {
     return (
