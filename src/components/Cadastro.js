@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
-export default function Cadastro() {
+export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,7 @@ export default function Cadastro() {
 
   const navigate = useNavigate();
 
-  async function Cadastro(event) {
+  async function SignUp(event) {
     event.preventDefault();
 
     const body = {
@@ -37,7 +37,7 @@ export default function Cadastro() {
     }
   }
 
-    function FormularioCadastro() {
+    function SignUpForm() {
         return (
           <>
             <input
@@ -76,7 +76,7 @@ export default function Cadastro() {
       return (
         <Container>
           <h1>My Wallet</h1>
-          <SignupForms onSubmit={Cadastro}>{FormularioCadastro()}</SignupForms>
+          <SignupForms onSubmit={SignUp}>{SignUpForm()}</SignupForms>
           <Link to="/">Já tem uma conta? Entre agora!</Link>
         </Container>
       );

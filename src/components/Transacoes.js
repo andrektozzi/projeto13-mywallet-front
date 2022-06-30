@@ -22,7 +22,7 @@ export default function Signup() {
   
         try {
           const response = await axios.get(
-            "http://localhost:5000/transactions",
+            "http://localhost:5000/transacoes",
             config
           );
   
@@ -86,7 +86,7 @@ export default function Signup() {
       };
   
       try {
-        await axios.get("http://localhost:5000/signout", config);
+        await axios.get("http://localhost:5000/sair", config);
         alert("Usuário deslogado com sucesso!");
         navigate("/");
       } catch (error) {
@@ -108,13 +108,13 @@ export default function Signup() {
           {RenderBalance()}
         </TransactionsContainer>
         <ContainerAddTransaction>
-          <Link to="/income">
+          <Link to="/entradas">
             <i>
               <IoAddCircleOutline />
             </i>
             <span>Nova Entrada</span>
           </Link>
-          <Link to="/expense">
+          <Link to="/saidas">
             <i>
               <IoRemoveCircleOutline />
             </i>

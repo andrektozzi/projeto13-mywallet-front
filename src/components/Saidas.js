@@ -30,7 +30,7 @@ export default function Expense() {
       };
   
       try {
-        await axios.post("http://localhost:5000/expense", body, config);
+        await axios.post("http://localhost:5000/saidas", body, config);
         alert("Nova saída criada com sucesso!");
         navigate("/transacoes");
       } catch (error) {

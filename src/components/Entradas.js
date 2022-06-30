@@ -30,7 +30,7 @@ export default function Income() {
     };
 
     try {
-      await axios.post("http://localhost:5000/income", body, config);
+      await axios.post("http://localhost:5000/entradas", body, config);
       alert("Nova entrada criada com sucesso!");
       navigate("/transacoes");
     } catch (error) {

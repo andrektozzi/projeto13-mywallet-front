@@ -39,7 +39,7 @@ export default function Login() {
     }
   }
 
-   function FormularioLogin() {
+   function LoginForm() {
     return (
       <>
         <input
@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <Container>
       <h1>My Wallet</h1>
-      <LoginForms onSubmit={AdicionarLogin}>{FormularioLogin()}</LoginForms>
+      <LoginForms onSubmit={AdicionarLogin}>{LoginForm()}</LoginForms>
       <Link to="/cadastro">Primeira vez? Cadastre-se!</Link>
     </Container>
   );
