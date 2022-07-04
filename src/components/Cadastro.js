@@ -20,7 +20,6 @@ export default function SignUp() {
       name,
       email,
       password,
-      confirmPassword,
     };
 
     if(password !== confirmPassword) {
@@ -28,7 +27,7 @@ export default function SignUp() {
     }
 
     try {
-      await axios.post("http://localhost:5000/cadastro", body);
+      await axios.post("https://git.heroku.com/projeto13-mywallet-back-driven.git/cadastro", body);
       alert("Sucesso! Seu usuário foi criado.");
       navigate("/");
     } catch (error) {

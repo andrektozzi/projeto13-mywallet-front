@@ -30,7 +30,7 @@ export default function Income() {
     };
 
     try {
-      await axios.post("http://localhost:5000/entradas", body, config);
+      await axios.post("https://git.heroku.com/projeto13-mywallet-back-driven.git/entradas", body, config);
       alert("Nova entrada criada com sucesso!");
       navigate("/transacoes");
     } catch (error) {
