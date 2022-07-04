@@ -22,7 +22,7 @@ export default function Signup() {
   
         try {
           const response = await axios.get(
-            "https://git.heroku.com/projeto13-mywallet-back-driven.git/transacoes",
+            "https://projeto13-mywallet-back-driven.herokuapp.com/transacoes",
             config
           );
   
@@ -86,7 +86,7 @@ export default function Signup() {
       };
   
       try {
-        await axios.get("https://git.heroku.com/projeto13-mywallet-back-driven.git/sair", config);
+        await axios.get("https://projeto13-mywallet-back-driven.herokuapp.com/sair", config);
         alert("Usuário deslogado com sucesso!");
         navigate("/");
       } catch (error) {

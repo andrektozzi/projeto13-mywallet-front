@@ -30,7 +30,7 @@ export default function Expense() {
       };
   
       try {
-        await axios.post("https://git.heroku.com/projeto13-mywallet-back-driven.git/saidas", body, config);
+        await axios.post("https://projeto13-mywallet-back-driven.herokuapp.com/saidas", body, config);
         alert("Nova saída criada com sucesso!");
         navigate("/transacoes");
       } catch (error) {

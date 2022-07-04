@@ -27,7 +27,7 @@ export default function SignUp() {
     }
 
     try {
-      await axios.post("https://git.heroku.com/projeto13-mywallet-back-driven.git/cadastro", body);
+      await axios.post("https://projeto13-mywallet-back-driven.herokuapp.com/cadastro", body);
       alert("Sucesso! Seu usuário foi criado.");
       navigate("/");
     } catch (error) {
