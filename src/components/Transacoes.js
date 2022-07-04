@@ -87,7 +87,6 @@ export default function Signup() {
   
       try {
         await axios.get("https://projeto13-mywallet-back-driven.herokuapp.com/sair", config);
-        alert("Usuário deslogado com sucesso!");
         navigate("/");
       } catch (error) {
         const message = error.response.statusText;

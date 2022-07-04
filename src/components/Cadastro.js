@@ -22,6 +22,10 @@ export default function SignUp() {
       password,
     };
 
+    if(password.length < 6) {
+      return alert("A senha deve ter no mínimo seis caracteres!")
+    }
+
     if(password !== confirmPassword) {
       return alert("As senhas não conferem. Digite novamente!");
     }
